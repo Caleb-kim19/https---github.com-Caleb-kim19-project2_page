@@ -1,9 +1,14 @@
 // script.js
 const viewButtons = document.querySelectorAll('.view-button');
 const deleteButtons = document.querySelectorAll('.delete-button');
+
+const startTime = document.getElementById("start-time").value;
+const endTime = document.getElementById("end-time").value;
+
 const modal = document.getElementById('myModal');
 const modalContent = document.getElementById('modalContent');
 const closeModal = document.getElementById('closeModal');
+
 
 viewButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
@@ -27,6 +32,13 @@ deleteButtons.forEach((button) => {
     });
 });
 
+function getSelectedTimeRange() {
+    if (startTime < endTime) {
+        alert(`선택한 시간 범위: ${startTime} ~ ${endTime}`);
+    } else {
+        alert("종료 시간은 시작 시간보다 미래 시간이어야 합니다.");
+    }
+}
 
 closeModal.addEventListener('click', () => {
     closeModalFunction();
