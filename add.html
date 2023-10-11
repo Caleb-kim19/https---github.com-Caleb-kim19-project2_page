@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <input type="text" class="form-control" id="Name" placeholder="예약자 이름" required="">
-                        <div class="invalid-feedback">Valid name is required.</div>
+                        <div class="invalid-feedback">예약자 이름을 입력하세요.</div>
                     </div>
                 </div>
 
@@ -56,20 +56,20 @@
             <label for="reservation_date">예약 날짜</label>
             <div class="input-group">
                 <input type="date" class="form-control" id="reservation_date" required>
-                <div class="invalid-feedback" style="width: 100%;">Valid name is required.</div>
+                <div class="invalid-feedback" style="width: 100%;">예약 날짜를 선택하세요.</div>
             </div>
         </div>
 
         <div class="mb-3">
             <label for="reservation_time">예약 시간</label>
             <input type="time" class="form-control" id="reservation_time" step="600" required>
-            <div class="invalid-feedback">Valid name is required.</div>
+            <div class="invalid-feedback">예약 시간을 선택하세요.</div>
         </div>
 
         <div class="mb-3">
             <label for="rooms">예약 공간 선택</label>
             <select id="rooms" class="form-control" name="room_list" form="roomform" required>
-                <option value="default" selected="" disabled="">장소를 선택하세요.</option>
+                <option value="" selected disabled>장소를 선택하세요.</option>
                 <option value="room1">상상랩01</option>
                 <option value="room2">상상랩02</option>
                 <option value="room3">상상랩03</option>
@@ -81,9 +81,7 @@
                 <option value="room9">상상랩09</option>
                 <option value="room10">상상랩10</option>
             </select>
-            <div class="invalid-feedback">
-                Please enter your shipping address.
-            </div> 
+            <div class="invalid-feedback">예약 공간을 선택해주세요.</div> 
         </div>
 
         <div class="mb-3">
@@ -109,15 +107,16 @@
         'use strict';
         var form = document.querySelector('.needs-validation');
         form.addEventListener('submit', function(event) {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          } else {
-            alert('예약이 추가됩니다.');
-          }
-          form.classList.add('was-validated');
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            else {
+                alert('예약이 추가됩니다.');
+            }
+            form.classList.add('was-validated');
         });
-      })();
+    })();
 </script>
 </body>
 </html>
