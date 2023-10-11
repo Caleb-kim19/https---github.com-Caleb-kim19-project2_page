@@ -1,11 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>add</p>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>공간예약서비스 예약추가</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+        
+        .col-md-8 {
+            -ms-flex: 0 0 100%;
+            flex: 100%;
+            max-width: 100%;
+        }
+      </style>
+
+  </head>
+<body class="bg-light">
+    <div class="container">
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="img/logo.svg" alt="" width="72" height="72">
+        <h2>공간예약</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">예약 정보 입력</h4>
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" id="Name" placeholder="예약자 이름" required="">
+                        <div class="invalid-feedback">Valid name is required.</div>
+                    </div>
+                </div>
+
+        <div class="mb-3">
+            <label for="reservation_date">예약 날짜</label>
+            <div class="input-group">
+                <input type="date" class="form-control" id="reservation_date" required>
+                <div class="invalid-feedback" style="width: 100%;">Valid name is required.</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="reservation_time">예약 시간</label>
+            <input type="time" class="form-control" id="reservation_time" step="600" required>
+            <div class="invalid-feedback">Valid name is required.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="rooms">예약 공간 선택</label>
+            <select id="rooms" class="form-control" name="room_list" form="roomform" required>
+                <option value="default" selected="" disabled="">장소를 선택하세요.</option>
+                <option value="room1">상상랩01</option>
+                <option value="room2">상상랩02</option>
+                <option value="room3">상상랩03</option>
+                <option value="room4">상상랩04</option>
+                <option value="room5">상상랩05</option>
+                <option value="room6">상상랩06</option>
+                <option value="room7">상상랩07</option>
+                <option value="room8">상상랩08</option>
+                <option value="room9">상상랩09</option>
+                <option value="room10">상상랩10</option>
+            </select>
+            <div class="invalid-feedback">
+                Please enter your shipping address.
+            </div> 
+        </div>
+
+        <div class="mb-3">
+            <label for="reservation_purpose">예약 목적 <span class="text-muted">(Optional)</span></label>
+            <input type="text" class="form-control" id="reservation_purpose">
+        </div>
+
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">예약 추가</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2023-2 실전프로젝트1</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="index.html">돌아가기</a></li>
+    </ul>
+  </footer>
+</div>
+<script>
+    (function() {
+        'use strict';
+        var form = document.querySelector('.needs-validation');
+        form.addEventListener('submit', function(event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            alert('예약이 추가됩니다.');
+          }
+          form.classList.add('was-validated');
+        });
+      })();
+</script>
 </body>
 </html>
